@@ -27,7 +27,7 @@ public class EmployeeService {
 
     public EmployeeDTO getEmployeeById(long id){
         EmployeeEntity employeeEntity = employeeRepository.getById(id);
-        return new EmployeeDTO(111,"Abdullah", LocalDate.of(2024,7,19),true);
+        return  modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 
     public EmployeeDTO AddEmployee(EmployeeDTO employeeDTO) {
